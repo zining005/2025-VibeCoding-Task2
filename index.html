@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  <title>Zining Chen - Application Specialist</title> 
  <meta name="description" content="個人品牌網站，用來介紹個人背景、技能、作品集與聯絡方式；包含關於我、技能、作品與聯絡資訊的佈局骨架，便於後續替換與延伸。" />
- <style> /* CSS:BASE-START */ :root{ --bg:#4c85a2; /* 深藍/接近黑 */ --panel:#0f2133; --muted:#98a0ac; --text:#e6eef6; --accent:#1f7fa7; /* 青色偏深藍 */ --max-width:1100px; --radius:12px; --gap:1rem; --container-padding:1rem; }
+ <style> /* CSS:BASE-START */ :root{ --bg:#6c94a7; /* Dust */ --panel:#c5d8e1; --muted:#0b0a0b; --text:#070a0d; --accent:#6c94a70; /* 青色偏深藍 */ --max-width:1100px; --radius:12px; --gap:1rem; --container-padding:1rem; }
  *, *::before, *::after{box-sizing:border-box;}
 html,body{height:100%;}
 body{
@@ -41,8 +41,8 @@ header.site-header{
   top:0;
   z-index:20;
   backdrop-filter: blur(6px);
-  background:linear-gradient(180deg, rgba(7,18,38,0.85), rgba(7,18,38,0.65));
-  border-bottom:1px solid rgba(255,255,255,0.03);
+  background:linear-gradient(180deg, rgba(108, 148, 167, 0.85), rgba(108, 148, 167, 0.85));
+  border-bottom:1px solid rgba(255,255,255,0.9);
 }
 
 .nav{
@@ -78,7 +78,7 @@ header.site-header{
 .nav-link:hover,
 .nav-link:focus{
   color:var(--text);
-  background:rgba(255,255,255,0.02);
+  background:rgba(228, 219, 219, 0.02);
   outline:none;
 }
 
@@ -88,7 +88,7 @@ footer.site-footer{
   color:var(--muted);
   border-top:1px solid rgba(255,255,255,0.03);
   text-align:center;
-  background:linear-gradient(0deg, rgba(7,18,38,0.6), rgba(7,18,38,0.5));
+  background:linear-gradient(0deg, rgba(225, 236, 243, 0.6), rgba(7,18,38,0.5));
 }
 
 .section{
@@ -105,10 +105,10 @@ footer.site-footer{
 .row{display:block;}
 .stack{display:flex;flex-direction:column;gap:var(--gap);}
 .card{
-  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  background:linear-gradient(180deg, rgba(227, 233, 233, 0.82), rgba(227, 233, 233, 0.82));
   padding:1rem;
   border-radius:var(--radius);
-  border:1px solid rgba(255,255,255,0.03);
+  border:1px solid rgba(227, 233, 233, 0.82);
 }
 /* CSS:BASE-END */
 
@@ -117,7 +117,7 @@ footer.site-footer{
 .section-hero{
   padding-top:2rem;
   padding-bottom:2rem;
-  background:linear-gradient(180deg, rgba(10,25,40,0.6), transparent);
+  background:linear-gradient(180deg, rgba(227, 233, 233, 0.82), transparent);
 }
 
 .hero-inner{
@@ -151,11 +151,11 @@ footer.site-footer{
   display:inline-block;
   padding:0.55rem 0.85rem;
   border-radius:10px;
-  background:linear-gradient(90deg,var(--accent), #218fb3);
+  background:linear-gradient(90deg,var(--accent), #5e91aa);
   color:white;
   font-weight:600;
   text-decoration:none;
-  box-shadow:0 6px 18px rgba(31,127,167,0.12);
+  box-shadow:0 6px 18px rgba(227, 233, 233, 0.82);
 }
 
 .hero-media{
@@ -195,12 +195,12 @@ footer.site-footer{
 }
 
 .meta-pill{
-  background:rgba(255,255,255,0.02);
+  background:rgba(227, 233, 233, 0.82);
   padding:0.35rem 0.6rem;
   border-radius:999px;
   font-size:0.9rem;
   color:var(--text);
-  border:1px solid rgba(255,255,255,0.02);
+  border:1px solid rgba(227, 233, 233, 0.82);
 }
 /* CSS:ABOUT-END */
 
@@ -221,10 +221,10 @@ footer.site-footer{
 .skill-item{
   padding:0.45rem 0.6rem;
   border-radius:8px;
-  background:rgba(255,255,255,0.02);
+  background:rgba(227, 233, 233, 0.82);
   font-size:0.9rem;
   color:var(--text);
-  border:1px solid rgba(255,255,255,0.02);
+  border:1px solid rgba(227, 233, 233, 0.82);
 }
 /* CSS:SKILLS-END */
 
@@ -263,7 +263,7 @@ footer.site-footer{
   padding:0.35rem 0.55rem;
   border-radius:8px;
   background:transparent;
-  border:1px solid rgba(255,255,255,0.04);
+  border:1px solid rgba(227, 233, 233, 0.82);
   color:var(--text);
   font-size:0.9rem;
   text-decoration:none;
@@ -310,7 +310,7 @@ footer.site-footer{
   .container{padding-left:2rem;padding-right:2rem;}
 }
 /* CSS:RWD-END */
-</style> </head> <body> <div class="page"> <header class="site-header"> <div class="container nav" role="navigation" aria-label="主導覽列"> <div class="logo">Zining Chen · Application Specialist</div> <nav class="nav-list" aria-label="主要連結"> <a class="nav-link" href="#hero">首頁</a> <a class="nav-link" href="#about">關於我</a> <a class="nav-link" href="#skills">技能</a> <a class="nav-link" href="#projects">作品集</a> <a class="nav-link" href="#contact">聯絡我</a> </nav> </div> </header>
+</style> </head> <body> <div class="page"> <header class="site-header"> <div class="container nav" role="navigation" aria-label="主導覽列"> <div class="logo">Zining Chen · Application Specialist</div> <nav class="nav-list" aria-label="主要連結"> <a class="nav-link" href="#hero">Home</a> <a class="nav-link" href="#about">About Me</a> <a class="nav-link" href="#skills">Skills</a> <a class="nav-link" href="#projects">Portfolio</a> <a class="nav-link" href="#contact">Contact Me</a> </nav> </div> </header>
   <main>
   <!-- SECTION:HERO-START -->
   <section id="hero" class="section section-hero" aria-labelledby="hero-heading">
@@ -355,7 +355,7 @@ footer.site-footer{
       <aside class="card" aria-label="關於我側邊資訊">
         <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=60" alt="辦公桌與筆電的俯視照，代表工作情境" loading="lazy" />
         <p style="margin:0.6rem 0 0 0;" class="muted">
-          Download Resume: <a href="https://drive.google.com/file/d/1zlCG3qQX5YPqRilaaioUudm7R5yqpYI9/view?usp=sharing" style="color:var(--accent); text-decoration:underline;">My CV</a>
+          Download Resume: <a href="https://drive.google.com/file/d/1zlCG3qQX5YPqRilaaioUudm7R5yqpYI9/view?usp=sharing" style="color:var(--accent); text-decoration:underline;"> Check My CV</a>
         </p>
       </aside>
     </div>
