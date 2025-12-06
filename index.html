@@ -1,440 +1,263 @@
-<!DOCTYPE html> <html lang="zh-Hant"> <head> <meta charset="UTF-8" /> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title>Zining Chen - Application Specialist</title> 
- <meta name="description" content="個人品牌網站，用來介紹個人背景、技能、作品集與聯絡方式；包含關於我、技能、作品與聯絡資訊的佈局骨架，便於後續替換與延伸。" />
- <style> /* CSS:BASE-START */ :root{ --bg:#6c94a7; /* Dust */ --panel:#c5d8e1; --muted:#0b0a0b; --text:#070a0d; --accent:#6c94a70; /* 青色偏深藍 */ --max-width:1100px; --radius:12px; --gap:1rem; --container-padding:1rem; }
- *, *::before, *::after{box-sizing:border-box;}
-html,body{height:100%;}
-body{
-  margin:0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", "Hiragino Sans GB", sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.5;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  -webkit-text-size-adjust:100%;
-}
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zining Chen - Application Specialist</title>
+  <meta name="description" content="個人品牌網站，用來介紹個人背景、技能、作品集與聯絡方式；包含關於我、技能、作品與聯絡資訊的佈局骨架，便於後續替換與延伸。" />
+  <style>
+    /* CSS:BASE-START */
+    :root{
+      --bg:#6c94a7; /* Dust */
+      --panel:#c5d8e1;
+      --muted:#0b0a0b;
+      --text:#070a0d;
+      --accent:#6c94a70; /* 青色偏深藍 */
+      --max-width:1100px;
+      --radius:12px;
+      --gap:1rem;
+      --container-padding:1rem;
+    }
+    *, *::before, *::after{box-sizing:border-box;}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", "Hiragino Sans GB", sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      -webkit-text-size-adjust:100%;
+    }
+    .page{ min-height:100vh; display:flex; flex-direction:column; align-items:stretch; }
+    .container{ width:100%; max-width:var(--max-width); margin-left:auto; margin-right:auto; padding-left:var(--container-padding); padding-right:var(--container-padding); }
+    img{max-width:100%;height:auto;display:block;border-radius:8px;}
+    a{color:inherit;text-decoration:none;}
+    .muted{color:var(--muted);}
+    header.site-header{
+      position:sticky;
+      top:0;
+      z-index:20;
+      backdrop-filter: blur(6px);
+      background:linear-gradient(180deg, rgba(108, 148, 167, 0.85), rgba(108, 148, 167, 0.85));
+      border-bottom:1px solid rgba(255,255,255,0.9);
+    }
+    .nav{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:0.6rem 0; }
+    .logo{ font-weight:600; font-size:1rem; color:var(--text); letter-spacing:0.2px; }
+    .nav-list{ display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap; }
+    .nav-link{ display:inline-block; padding:0.45rem 0.6rem; border-radius:8px; font-size:0.95rem; color:var(--muted); }
+    .nav-link:hover, .nav-link:focus{ color:var(--text); background:rgba(228, 219, 219, 0.02); outline:none; }
+    main{flex:1 0 auto;padding-top:1rem;padding-bottom:2.5rem;}
+    footer.site-footer{ padding:1rem 0; color:var(--muted); border-top:1px solid rgba(255,255,255,0.03); text-align:center; background:linear-gradient(0deg, rgba(225, 236, 243, 0.6), rgba(7,18,38,0.5)); }
+    .section{ padding:1.25rem 0; }
+    .section .section-title{ margin:0 0 0.5rem 0; font-size:1.25rem; color:var(--text); }
+    /* small utility */
+    .row{display:block;}
+    .stack{display:flex;flex-direction:column;gap:var(--gap);}
+    .card{ background:linear-gradient(180deg, rgba(227, 233, 233, 0.82), rgba(227, 233, 233, 0.82)); padding:1rem; border-radius:var(--radius); border:1px solid rgba(227, 233, 233, 0.82); }
+    /* CSS:BASE-END */
 
-.page{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:stretch;
-}
+    /* CSS:HERO-START */
+    .section-hero{ padding-top:2rem; padding-bottom:2rem; background:linear-gradient(180deg, rgba(227, 233, 233, 0.82), transparent); }
+    .hero-inner{ display:flex; flex-direction:column; gap:1rem; align-items:flex-start; }
+    .hero-title{ font-size:1.5rem; margin:0; letter-spacing:0.2px; color:var(--text); }
+    .hero-sub{ margin:0; color:var(--muted); max-width:56ch; }
+    .hero-cta{ display:flex; gap:0.6rem; margin-top:0.75rem; flex-wrap:wrap; }
+    .btn{ display:inline-block; padding:0.55rem 0.85rem; border-radius:10px; background:linear-gradient(90deg,var(--accent), #d0d9dd); color:black; font-weight:600; text-decoration:none; box-shadow:0 6px 18px rgba(227, 233, 233, 0.32) ; }
+    .hero-media{ margin-top:1rem; width:100%; border-radius:12px; overflow:hidden; }
+    .hero-media img{display:block;width:100%;height:auto;}
+    /* CSS:HERO-END */
 
-.container{
-  width:100%;
-  max-width:var(--max-width);
-  margin-left:auto;
-  margin-right:auto;
-  padding-left:var(--container-padding);
-  padding-right:var(--container-padding);
-}
+    /* CSS:ABOUT-START */
+    .section-about{ padding-top:1.25rem; padding-bottom:1.25rem; }
+    .about-grid{ display:grid; grid-template-columns:1fr; gap:1rem; align-items:start; }
+    .about-content{ display:flex; flex-direction:column; gap:0.75rem; }
+    .about-lead{ color:var(--muted); line-height:1.7; margin:0; }
+    .about-style{ color:var(--muted); line-height:1.7; margin:0; }
+    .about-list{ margin:0.5rem 0 0 0; padding:0; list-style:disc; padding-left:1.25rem; color:var(--text); }
+    .about-list li{ margin:0.45rem 0; }
+    .about-cta{ display:flex; gap:0.6rem; margin-top:0.75rem; flex-wrap:wrap; }
+    .about-cta .btn{ padding:0.5rem 0.8rem; border-radius:10px; box-shadow:0 6px 14px rgba(0,0,0,0.06); transition:transform 160ms ease, box-shadow 160ms ease; }
+    .about-cta .btn:hover{ transform:translateY(-3px); box-shadow:0 10px 26px rgba(0,0,0,0.08); }
+    .about-aside{ display:block; }
+    .about-aside img{ border-radius:12px; }
+    /* CSS:ABOUT-END */
 
-img{max-width:100%;height:auto;display:block;border-radius:8px;}
-a{color:inherit;text-decoration:none;}
-.muted{color:var(--muted);}
+    /* CSS:SKILLS-START */
+    .section-skills{ padding-top:1.25rem; padding-bottom:1.25rem; }
+    .skill-list{ display:flex; gap:0.6rem; flex-wrap:wrap; margin-top:0.75rem; }
+    .skill-item{ padding:0.45rem 0.6rem; border-radius:8px; background:rgba(227, 233, 233, 0.82); font-size:0.9rem; color:var(--text); border:1px solid rgba(227, 233, 233, 0.82); }
+    /* CSS:SKILLS-END */
 
-header.site-header{
-  position:sticky;
-  top:0;
-  z-index:20;
-  backdrop-filter: blur(6px);
-  background:linear-gradient(180deg, rgba(108, 148, 167, 0.85), rgba(108, 148, 167, 0.85));
-  border-bottom:1px solid rgba(255,255,255,0.9);
-}
+    /* CSS:PROJECTS-START */
+    .section-projects{ padding-top:1.25rem; padding-bottom:1.25rem; }
+    .projects-grid{ display:grid; grid-template-columns:1fr; gap:1rem; margin-top:0.75rem; }
+    .project-card{ display:flex; flex-direction:column; gap:0.6rem; }
+    .project-card .project-meta{ color:var(--muted); font-size:0.95rem; }
+    .project-links{ display:flex; gap:0.5rem; flex-wrap:wrap; }
+    .link-pill{ padding:0.35rem 0.55rem; border-radius:8px; background:transparent; border:1px solid rgba(1, 16, 20, 0.82); color:var(--text); font-size:0.9rem; text-decoration:none; }
+    /* CSS:PROJECTS-END */
 
-.nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-  padding:0.6rem 0;
-}
+    /* CSS:CONTACT-START */
+    .section-contact{ padding-top:1.25rem; padding-bottom:1.25rem; }
+    .contact-list{ display:flex; flex-direction:column; gap:0.5rem; margin-top:0.75rem; }
+    .contact-item{ display:flex; gap:0.5rem; align-items:center; color:var(--muted); }
+    .contact-item a{color:var(--text);}
+    /* CSS:CONTACT-END */
 
-.logo{
-  font-weight:600;
-  font-size:1rem;
-  color:var(--text);
-  letter-spacing:0.2px;
-}
-
-.nav-list{
-  display:flex;
-  gap:0.75rem;
-  align-items:center;
-  flex-wrap:wrap;
-}
-
-.nav-link{
-  display:inline-block;
-  padding:0.45rem 0.6rem;
-  border-radius:8px;
-  font-size:0.95rem;
-  color:var(--muted);
-}
-
-.nav-link:hover,
-.nav-link:focus{
-  color:var(--text);
-  background:rgba(228, 219, 219, 0.02);
-  outline:none;
-}
-
-main{flex:1 0 auto;padding-top:1rem;padding-bottom:2.5rem;}
-footer.site-footer{
-  padding:1rem 0;
-  color:var(--muted);
-  border-top:1px solid rgba(255,255,255,0.03);
-  text-align:center;
-  background:linear-gradient(0deg, rgba(225, 236, 243, 0.6), rgba(7,18,38,0.5));
-}
-
-.section{
-  padding:1.25rem 0;
-}
-
-.section .section-title{
-  margin:0 0 0.5rem 0;
-  font-size:1.25rem;
-  color:var(--text);
-}
-
-/* small utility */
-.row{display:block;}
-.stack{display:flex;flex-direction:column;gap:var(--gap);}
-.card{
-  background:linear-gradient(180deg, rgba(227, 233, 233, 0.82), rgba(227, 233, 233, 0.82));
-  padding:1rem;
-  border-radius:var(--radius);
-  border:1px solid rgba(227, 233, 233, 0.82);
-}
-/* CSS:BASE-END */
-
-
-/* CSS:HERO-START */
-.section-hero{
-  padding-top:2rem;
-  padding-bottom:2rem;
-  background:linear-gradient(180deg, rgba(227, 233, 233, 0.82), transparent);
-}
-
-.hero-inner{
-  display:flex;
-  flex-direction:column;
-  gap:1rem;
-  align-items:flex-start;
-}
-
-.hero-title{
-  font-size:1.5rem;
-  margin:0;
-  letter-spacing:0.2px;
-  color:var(--text);
-}
-
-.hero-sub{
-  margin:0;
-  color:var(--muted);
-  max-width:56ch;
-}
-
-.hero-cta{
-  display:flex;
-  gap:0.6rem;
-  margin-top:0.75rem;
-  flex-wrap:wrap;
-}
-
-.btn{
-  display:inline-block;
-  padding:0.55rem 0.85rem;
-  border-radius:10px;
-  background:linear-gradient(90deg,var(--accent), #5e91aa);
-  color:black;
-  font-weight:600;
-  text-decoration:none;
-  box-shadow:0 6px 18px rgba(227, 233, 233, 0.32)
-  ;
-}
-
-.hero-media{
-  margin-top:1rem;
-  width:100%;
-  border-radius:12px;
-  overflow:hidden;
-}
-
-.hero-media img{display:block;width:100%;height:auto;}
-/* CSS:HERO-END */
-
-
-/* CSS:ABOUT-START */
-.section-about{
-  padding-top:1.25rem;
-  padding-bottom:1.25rem;
-}
-
-.about-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:1rem;
-  align-items:start;
-}
-
-.about-bio{
-  color:var(--muted);
-  line-height:1.7;
-}
-
-.profile-meta{
-  margin-top:0.75rem;
-  display:flex;
-  gap:0.5rem;
-  flex-wrap:wrap;
-}
-
-.meta-pill{
-  background:rgba(227, 233, 233, 0.82);
-  padding:0.35rem 0.6rem;
-  border-radius:999px;
-  font-size:0.9rem;
-  color:var(--text);
-  border:1px solid rgba(227, 233, 233, 0.82);
-}
-/* CSS:ABOUT-END */
-
-
-/* CSS:SKILLS-START */
-.section-skills{
-  padding-top:1.25rem;
-  padding-bottom:1.25rem;
-}
-
-.skill-list{
-  display:flex;
-  gap:0.6rem;
-  flex-wrap:wrap;
-  margin-top:0.75rem;
-}
-
-.skill-item{
-  padding:0.45rem 0.6rem;
-  border-radius:8px;
-  background:rgba(227, 233, 233, 0.82);
-  font-size:0.9rem;
-  color:var(--text);
-  border:1px solid rgba(227, 233, 233, 0.82);
-}
-/* CSS:SKILLS-END */
-
-
-/* CSS:PROJECTS-START */
-.section-projects{
-  padding-top:1.25rem;
-  padding-bottom:1.25rem;
-}
-
-.projects-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:1rem;
-  margin-top:0.75rem;
-}
-
-.project-card{
-  display:flex;
-  flex-direction:column;
-  gap:0.6rem;
-}
-
-.project-card .project-meta{
-  color:var(--muted);
-  font-size:0.95rem;
-}
-
-.project-links{
-  display:flex;
-  gap:0.5rem;
-  flex-wrap:wrap;
-}
-
-.link-pill{
-  padding:0.35rem 0.55rem;
-  border-radius:8px;
-  background:transparent;
-  border:1px solid rgba(1, 16, 20, 0.82);
-  color:var(--text);
-  font-size:0.9rem;
-  text-decoration:none;
-}
-/* CSS:PROJECTS-END */
-
-
-/* CSS:CONTACT-START */
-.section-contact{
-  padding-top:1.25rem;
-  padding-bottom:1.25rem;
-}
-
-.contact-list{
-  display:flex;
-  flex-direction:column;
-  gap:0.5rem;
-  margin-top:0.75rem;
-}
-
-.contact-item{
-  display:flex;
-  gap:0.5rem;
-  align-items:center;
-  color:var(--muted);
-}
-
-.contact-item a{color:var(--text);}
-/* CSS:CONTACT-END */
-
-
-/* CSS:RWD-START */
-/* mobile-first, 在較大螢幕調整為左右雙欄 */
-@media (min-width: 768px){
-  .hero-inner{flex-direction:row;align-items:center;justify-content:space-between;}
-  .hero-title{font-size:2rem;}
-  .about-grid{grid-template-columns:1fr 360px;}
-  .projects-grid{grid-template-columns:repeat(2,1fr);}
-  .row{display:flex;gap:1rem;}
-  .skill-list{justify-content:flex-start;}
-}
-
-@media (min-width: 1200px){
-  .container{padding-left:2rem;padding-right:2rem;}
-}
-/* CSS:RWD-END */
-</style> </head> <body> <div class="page"> <header class="site-header"> <div class="container nav" role="navigation" aria-label="主導覽列"> <div class="logo">Zining Chen · Application Specialist</div> <nav class="nav-list" aria-label="主要連結"> <a class="nav-link" href="#hero">Home</a> <a class="nav-link" href="#about">About Me</a> <a class="nav-link" href="#skills">Skills</a> <a class="nav-link" href="#projects">Portfolio</a> <a class="nav-link" href="#contact">Contact Me</a> </nav> </div> </header>
-  <main>
-  <!-- SECTION:HERO-START -->
-  <section id="hero" class="section section-hero" aria-labelledby="hero-heading">
-    <div class="container hero-inner">
-      <div class="hero-copy">
-        <h1 id="hero-heading" class="hero-title">Application Specialist</h1>
-        <p class="hero-sub">
-          具備企業資源規劃（ERP）系統分析與開發協調經驗，曾以 Microsoft Dynamics / Navision 為核心平台，負責需求評估、功能開發與系統穩定性維護；善用 Power Automate、VBS 與 Python 自動化流程、撰寫清晰內部文件，協助團隊理解 EC 資料流程與 NAV 排程工作。此網站為個人品牌骨架，未來會用 Section SDD 產生更完整的文案與版面。
-        </p>
-        <div class="hero-cta" role="group" aria-label="主要行動呼叫">
-          <a class="btn" href="#projects">View Protfolio</a>
-          <a class="btn" href="#contact">Contact Me</a>
-        </div>
-
+    /* CSS:RWD-START */
+    /* mobile-first, 在較大螢幕調整為左右雙欄 */
+    @media (min-width: 768px){
+      .hero-inner{flex-direction:row;align-items:center;justify-content:space-between;}
+      .hero-title{font-size:2rem;}
+      .about-grid{grid-template-columns:1fr 380px; align-items:start; gap:1.5rem;}
+      .about-aside{display:block;}
+      .projects-grid{grid-template-columns:repeat(2,1fr);}
+      .row{display:flex;gap:1rem;}
+      .skill-list{justify-content:flex-start;}
+    }
+    @media (min-width: 1200px){
+      .container{padding-left:2rem;padding-right:2rem;}
+    }
+    /* CSS:RWD-END */
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="container nav" role="navigation" aria-label="主導覽列">
+        <div class="logo">Zining Chen · Application Specialist</div>
+        <nav class="nav-list" aria-label="主要連結">
+          <a class="nav-link" href="#hero">Home</a>
+          <a class="nav-link" href="#about">About Me</a>
+          <a class="nav-link" href="#skills">Skills</a>
+          <a class="nav-link" href="#projects">Portfolio</a>
+          <a class="nav-link" href="#contact">Contact Me</a>
+        </nav>
       </div>
+    </header>
 
-      <div class="hero-media" aria-hidden="false">
-        <img src="system_sherlock.png" alt="調查系統問題的偵探" loading="lazy" />
-      </div>
-    </div>
-  </section>
-  <!-- SECTION:HERO-END -->
-
-  <!-- SECTION:ABOUT-START -->
-  <section id="about" class="section section-about" aria-labelledby="about-heading">
-    <div class="container about-grid">
-      <div>
-        <h2 id="about-heading" class="section-title">About Me</h2>
-        <p class="about-bio">
-          本人有約五年在零售業中使用 Microsoft Dynamics（Navision）做為 ERP 系統的專案與維運經驗，職責涵蓋：作為內部部門與外部廠商的橋樑、評估需求之合理性與目的、將業務需求轉為 IT 規格、協調排程以配合門市營運時間，並在必要時支援早晚班的系統穩定性維護工作。
-        </p>
-
-        <div class="profile-meta" aria-hidden="false">
-          <span class="meta-pill">ERP 系統分析</span>
-          <span class="meta-pill">Microsoft Dynamics / Navision</span>
-          <span class="meta-pill">流程自動化：Power Automate / VBS / Python</span>
-        </div>
-
-  
-      </div>
-
-      <aside class="card" aria-label="關於我側邊資訊">
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=60" alt="辦公桌與筆電的俯視照，代表工作情境" loading="lazy" />
-        <p style="margin:0.6rem 0 0 0;" class="muted">
-          Download Resume: <a href="https://drive.google.com/file/d/1zlCG3qQX5YPqRilaaioUudm7R5yqpYI9/view?usp=sharing" style="color:var(--accent); text-decoration:underline;"> Check My CV</a>
-        </p>
-      </aside>
-    </div>
-  </section>
-  <!-- SECTION:ABOUT-END -->
-
-  <!-- SECTION:SKILLS-START -->
-  <section id="skills" class="section section-skills" aria-labelledby="skills-heading">
-    <div class="container">
-      <h2 id="skills-heading" class="section-title">Skills</h2>
-      <p class="muted">這裡目前是 Skills 區的占位內容，未來會列出技能矩陣與熟悉程度（例如 熟練 / 熟悉 / 基礎）。開發者請整段替換本區。</p>
-
-      <div class="skill-list" role="list" aria-label="技能清單">
-        <span class="skill-item" role="listitem">Root Cause Analysis</span>
-        <span class="skill-item" role="listitem">ERP System Analyst：Microsoft Dynamics / Navision</span>
-        <span class="skill-item" role="listitem">Vibe Coding / AI Automation：Power Automate、VBS、Python</span>
-        <span class="skill-item" role="listitem">Streamline Working Progess and Creating SOP</span>
-        <span class="skill-item" role="listitem">Cross-functional collaboration</span>
-      </div>
-
-    </div>
-  </section>
-  <!-- SECTION:SKILLS-END -->
-
-  <!-- SECTION:PROJECTS-START -->
-  <section id="projects" class="section section-projects" aria-labelledby="projects-heading">
-    <div class="container">
-      <h2 id="projects-heading" class="section-title">Protfolio</h2>
-      <p class="muted">這裡目前是 Projects 區的占位內容，未來會放詳細專案案例、技術細節與連結（例如 GitHub、Demo）。開發者請整段替換本區。</p>
-
-      <div class="projects-grid" role="list" aria-label="專案清單">
-        <article class="card project-card" role="listitem">
-          <h3 class="project-title">自動化關閉錯誤訊息</h3>
-          <p class="project-meta">說明：使用 AI Vibe coding 建立 Python 自動化程式關閉 Navision 錯誤提醒，減少人工檢查作業時間</p>
-          <div class="project-links">
-            <a class="link-pill" href="https://github.com/zining005/close_popup_window"> Shutdown specificed pop-up window</a>
+    <main>
+      <!-- SECTION:HERO-START -->
+      <section id="hero" class="section section-hero" aria-labelledby="hero-heading">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1 id="hero-heading" class="hero-title">Application Specialist</h1>
+            <p class="hero-sub">
+              具備企業資源規劃（ERP）系統分析與開發協調經驗，曾以 Microsoft Dynamics / Navision 為核心平台，負責需求評估、功能開發與系統穩定性維護；善用 Power Automate、VBS 與 Python 自動化流程、撰寫清晰內部文件，協助團隊理解 EC 資料流程與 NAV 排程工作。此網站為個人品牌骨架，未來會用 Section SDD 產生更完整的文案與版面。
+            </p>
+            <div class="hero-cta" role="group" aria-label="主要行動呼叫">
+              <a class="btn" href="#projects">View Portfolio</a>
+              <a class="btn" href="#contact">Contact Me</a>
+            </div>
           </div>
-        </article>
-
-        <article class="card project-card" role="listitem">
-          <h3 class="project-title">Vibe Coding Camp in Hexschool</h3>
-          <p class="project-meta">說明：使用 AI Vibe coding 建立個人網站 </p>
-          <div class="project-links">
-            <a class="link-pill" href="https://github.com/zining005/vibecoding-camp"> Hexschool Vibe Coding Camp - Project 2</a>
+          <div class="hero-media" aria-hidden="false">
+            <img src="system_sherlock.png" alt="調查系統問題的偵探" loading="lazy" />
           </div>
-        </article>
-      </div>
-    </div>
-  </section>
-  <!-- SECTION:PROJECTS-END -->
-
-  <!-- SECTION:CONTACT-START -->
-  <section id="contact" class="section section-contact" aria-labelledby="contact-heading">
-    <div class="container">
-      <h2 id="contact-heading" class="section-title"> Contact Me </h2>
-      <p class="muted">這裡目前是 Contact 區的占位內容，未來會放更完整的聯絡表單、社群與下載履歷的按鈕。開發者請整段替換本區。</p>
-
-      <div class="contact-list" role="list" aria-label="聯絡方式">
-        <div class="contact-item" role="listitem">
-          <strong class="muted">Email：</strong>
-          <a href="mailto:czn015@gmail.com">czn015@gmail.com</a>
-        <div class="contact-item" role="listitem">
-          <strong class="muted">GitHub：</strong>
-          <a href="https://github.com/zining005">https://github.com/zining005</a>
         </div>
-        <div class="contact-item" role="listitem">
-          <strong class="muted">LinkedIn：</strong>
-          <a href="www.linkedin.com/in/chenzining015">www.linkedin.com/in/chenzining015</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- SECTION:CONTACT-END -->
-</main>
+      </section>
+      <!-- SECTION:HERO-END -->
 
-<footer class="site-footer">
-  <div class="container">
-    <small>© <span class="muted">Zining Chen</span> — 個人品牌網站 • 版權所有</small>
+      <!-- SECTION:ABOUT-START -->
+      <section id="about" class="section section-about" aria-labelledby="about-heading">
+        <div class="container about-grid">
+          <div class="about-content" aria-hidden="false">
+            <h2 id="about-heading" class="section-title">About Me</h2>
+            <p class="about-lead">
+              我目前從事 ERP 系統分析與維運工作，主要以 Microsoft Dynamics / Navision 為核心平台。日常工作包含需求評估、功能設計協調、系統排程管理與自動化腳本撰寫（例如 Power Automate、VBS 與 Python），目標是讓作業流程更穩定、減少重複人工操作，並提升跨部門的可觀察性與效率。
+            </p>
+            <p class="about-style">
+              我做事重視溝通與教學，喜歡把技術性的內容拆解成易懂的步驟與文件，並與相關部門一起驗證流程；在專案中我偏向務實的解法，會優先嘗試小步快驗的自動化與改善，確保變更能平滑導入日常營運。
+            </p>
+
+            <ul class="about-list" aria-label="我的強項">
+              <li>流程自動化與排程維運：快速排查與減少人工干預的作業。</li>
+              <li>跨部門溝通與需求轉譯：在業務與工程間建立清晰的規格與驗收條件。</li>
+              <li>系統穩定性與 Root Cause Analysis：有效辨識問題並提出可執行的修復策略。</li>
+            </ul>
+          </div>
+
+          <aside class="card about-aside" aria-label="關於我側邊資訊">
+            <img src="https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=60" alt="工作桌面示意：筆電、筆記與咖啡代表專注的工作情境" loading="lazy" />
+            <p style="margin:0.6rem 0 0 0;" class="muted">Download Resume: <a href="https://drive.google.com/file/d/1zlCG3qQX5YPqRilaaioUudm7R5yqpYI9/view?usp=sharing" style="color:var(--accent); text-decoration:underline;">Check My CV</a></p>
+          </aside>
+        </div>
+      </section>
+      <!-- SECTION:ABOUT-END -->
+
+      <!-- SECTION:SKILLS-START -->
+      <section id="skills" class="section section-skills" aria-labelledby="skills-heading">
+        <div class="container">
+          <h2 id="skills-heading" class="section-title">Skills</h2>
+          <p class="muted">主要技能</p>
+          <div class="skill-list" role="list" aria-label="技能清單">
+            <span class="skill-item" role="listitem">Root Cause Analysis</span>
+            <span class="skill-item" role="listitem">ERP System Analyst：Microsoft Dynamics / Navision</span>
+            <span class="skill-item" role="listitem">Vibe Coding / AI Automation：Power Automate、VBS、Python</span>
+            <span class="skill-item" role="listitem">Streamline Working Progess and Creating SOP</span>
+            <span class="skill-item" role="listitem">Cross-functional collaboration</span>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION:SKILLS-END -->
+
+      <!-- SECTION:PROJECTS-START -->
+      <section id="projects" class="section section-projects" aria-labelledby="projects-heading">
+        <div class="container">
+          <h2 id="projects-heading" class="section-title">Protfolio</h2>
+          <p class="muted">運用 AI 執行 Vibe Coding 處理工作問題並建立 Side Project</p>
+          <div class="projects-grid" role="list" aria-label="專案清單">
+            <article class="card project-card" role="listitem">
+              <h3 class="project-title">自動化關閉錯誤訊息</h3>
+              <p class="project-meta">說明：使用 AI Vibe coding 建立 Python 自動化程式關閉 Navision 錯誤提醒，減少人工檢查作業時間</p>
+              <div class="project-links">
+                <a class="link-pill" href="https://github.com/zining005/close_popup_window"> Shutdown specificed pop-up window</a>
+              </div>
+            </article>
+
+            <article class="card project-card" role="listitem">
+              <h3 class="project-title">Vibe Coding Camp in Hexschool</h3>
+              <p class="project-meta">說明：使用 AI Vibe coding 建立個人網站 </p>
+              <div class="project-links">
+                <a class="link-pill" href="https://github.com/zining005/vibecoding-camp"> Hexschool Vibe Coding Camp - Project 2</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION:PROJECTS-END -->
+
+      <!-- SECTION:CONTACT-START -->
+      <section id="contact" class="section section-contact" aria-labelledby="contact-heading">
+        <div class="container">
+          <h2 id="contact-heading" class="section-title"> Contact Me </h2>
+          <p class="muted">以下為聯絡方式與相關連結</p>
+          <div class="contact-list" role="list" aria-label="聯絡方式">
+            <div class="contact-item" role="listitem">
+              <strong class="muted">Email：</strong>
+              <a href="mailto:czn015@gmail.com">czn015@gmail.com</a>
+            </div>
+            <div class="contact-item" role="listitem">
+              <strong class="muted">GitHub：</strong>
+              <a href="https://github.com/zining005">https://github.com/zining005</a>
+            </div>
+            <div class="contact-item" role="listitem">
+              <strong class="muted">LinkedIn：</strong>
+              <a href="https://www.linkedin.com/in/chenzining015">www.linkedin.com/in/chenzining015</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION:CONTACT-END -->
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span class="muted">Zining Chen</span> — 個人品牌網站 • 版權所有</small>
+      </div>
+    </footer>
   </div>
-</footer>
-</div> </body> </html>
+</body>
+</html>
