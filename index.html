@@ -12,7 +12,7 @@
       --panel:#c5d8e1;
       --muted:#0b0a0b;
       --text:#070a0d;
-      --accent:#6c94a70; /* 青色偏深藍 */
+      --accent:#c5d8e1; /* 青色偏深藍 */
       --max-width:1100px;
       --radius:12px;
       --gap:1rem;
@@ -40,7 +40,7 @@
       top:0;
       z-index:20;
       backdrop-filter: blur(6px);
-      background:linear-gradient(180deg, rgba(108, 148, 167, 0.85), rgba(108, 148, 167, 0.85));
+      background:linear-gradient( rgba(108, 148, 167, 0.85), rgba(108, 148, 167, 0.85));
       border-bottom:1px solid rgba(255,255,255,0.9);
     }
     .nav{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:0.6rem 0; }
@@ -59,7 +59,7 @@
     /* CSS:BASE-END */
 
     /* CSS:HERO-START */
-    .section-hero{ padding-top:2rem; padding-bottom:2rem; background:linear-gradient(180deg, rgba(227, 233, 233, 0.82), transparent); }
+    .section-hero{ padding-top:2rem; padding-bottom:2rem; background:linear-gradient( transparent); }
     .hero-inner{ display:flex; flex-direction:column; gap:1rem; align-items:flex-start; }
     .hero-title{ font-size:1.5rem; margin:0; letter-spacing:0.2px; color:var(--text); }
     .hero-sub{ margin:0; color:var(--muted); max-width:56ch; }
@@ -140,20 +140,18 @@
 
     <main>
       <!-- SECTION:HERO-START -->
+       
       <section id="hero" class="section section-hero" aria-labelledby="hero-heading">
         <div class="container hero-inner">
           <div class="hero-copy">
             <h1 id="hero-heading" class="hero-title">Application Specialist</h1>
             <p class="hero-sub">
-              具備企業資源規劃（ERP）系統分析與開發協調經驗，曾以 Microsoft Dynamics / Navision 為核心平台，負責需求評估、功能開發與系統穩定性維護；善用 Power Automate、VBS 與 Python 自動化流程、撰寫清晰內部文件，協助團隊理解 EC 資料流程與 NAV 排程工作。此網站為個人品牌骨架，未來會用 Section SDD 產生更完整的文案與版面。
+              具備五年以上企業資源規劃（ERP）系統分析與協調經驗，曾以 Microsoft Dynamics / Navision 為核心平台，負責需求評估、系統問題分析與穩定性維護，善用 AI 自動化流程、流程改善與建立 SOP。
             </p>
             <div class="hero-cta" role="group" aria-label="主要行動呼叫">
               <a class="btn" href="#projects">View Portfolio</a>
               <a class="btn" href="#contact">Contact Me</a>
             </div>
-          </div>
-          <div class="hero-media" aria-hidden="false">
-            <img src="system_sherlock.png" alt="調查系統問題的偵探" loading="lazy" />
           </div>
         </div>
       </section>
@@ -168,7 +166,7 @@
               我目前從事 ERP 系統分析與維運工作，主要以 Microsoft Dynamics / Navision 為核心平台。日常工作包含需求評估、功能設計協調、系統排程管理與自動化腳本撰寫（例如 Power Automate、VBS 與 Python），目標是讓作業流程更穩定、減少重複人工操作，並提升跨部門的可觀察性與效率。
             </p>
             <p class="about-style">
-              我做事重視溝通與教學，喜歡把技術性的內容拆解成易懂的步驟與文件，並與相關部門一起驗證流程；在專案中我偏向務實的解法，會優先嘗試小步快驗的自動化與改善，確保變更能平滑導入日常營運。
+              做事重視找到問題解決根本性原因，喜歡把技術性的內容拆解成易懂的步驟與文件，並與相關部門一起驗證流程；在專案中我偏向務實的解法，會優先嘗試小步快驗的自動化與改善，確保變更能順利導入日常營運。
             </p>
 
             <ul class="about-list" aria-label="我的強項">
@@ -179,7 +177,7 @@
           </div>
 
           <aside class="card about-aside" aria-label="關於我側邊資訊">
-            <img src="https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=60" alt="工作桌面示意：筆電、筆記與咖啡代表專注的工作情境" loading="lazy" />
+            <img src="system_sherlock.png" alt="調查系統問題的偵探" loading="lazy" />
             <p style="margin:0.6rem 0 0 0;" class="muted">Download Resume: <a href="https://drive.google.com/file/d/1zlCG3qQX5YPqRilaaioUudm7R5yqpYI9/view?usp=sharing" style="color:var(--accent); text-decoration:underline;">Check My CV</a></p>
           </aside>
         </div>
